@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  br
+  div
+    ul
+      if user
+        if can_view_clients
+          li: a(href='/clients') Клиенты
+        if can_view_users
+          li: a(href='/users') Пользователи
+        li: a(href='', id='Logout') Выйти
+      else
+        li: a(href='', id='Login') Войти

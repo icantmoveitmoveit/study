@@ -1,0 +1,13 @@
+extends ../layout
+
+block content
+  h1= title
+  table(border="1", cellpadding="5")
+    tr
+      th ID
+      th Название
+    each client in clients
+      tr
+        td= client.id
+        td= client.label
+  p: a(href="/") На главную

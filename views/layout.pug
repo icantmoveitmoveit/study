@@ -1,0 +1,25 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    script(src='/javascripts/jquery.min.js')
+    script(src='/javascripts/layout.js')
+  body
+    block content
+
+    // Всплывающее окно входа
+    div#login_popup.q-window(style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); z-index:1000;")
+      div.q-window-block(style="width:400px; margin:100px auto; background:#fff; border-radius:5px; padding:20px;")
+        div.q-window-header(style="font-weight:bold;") Вход
+        a#login_popup_close(style="float:right; cursor:pointer;") X
+        div(style="clear:both;")
+        .q-window-body
+          .q-form-data
+            label(for="inpLogin") Логин
+            input#inpLogin(type="text")
+          .q-form-data
+            label(for="inpPassword") Пароль
+            input#inpPassword(type="password")
+          .q-buttons(style="margin-top:10px;")
+            a#submit_login(href="#", style="background:#007bff; color:#fff; padding:5px 10px; text-decoration:none;") Войти

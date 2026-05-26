@@ -1,0 +1,17 @@
+extends ../layout
+
+block content
+  h1= title
+  table(border="1", cellpadding="5")
+    tr
+      th ID
+      th Логин
+      th ФИО
+      th Роль
+    each user in users
+      tr
+        td= user.id
+        td= user.login
+        td= user.fio
+        td= user.role_name
+  p: a(href="/") На главную
